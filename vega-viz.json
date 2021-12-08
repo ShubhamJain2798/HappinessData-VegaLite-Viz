@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "An interactive bar plot of Positive affect of all the countries in the World Happiness Dataset.",
   "data": {
-    "url": "https://raw.githubusercontent.com/ShubhamJain2798/GIT_practice/master/DataPanelWHR2021C2-new.csv",
+    "url": "https://raw.githubusercontent.com/ShubhamJain2798/HappinessData-VegaLite-Viz/master/happiness-dataset.csv",
     "format": {
       "type": "csv",
       "parse": {"year": "number", "Positive affect": "number"}
