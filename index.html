@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+        <title>Vega Lite - Shubham Jain</title>
+    </head>
+    <body>
+        <h1>Test header</h1>
+        <div class="container", style="margin: auto; width: 75%;">
+            <div id="myviz", style="margin: auto; width: 100%; height: 100%;" >
+            </div>
+        </div>
+        
+    </body>
+    <script type="text/javascript" src="vega-viz.json"></script>
+    <script>
+        const vega_json = "https://raw.githubusercontent.com/ShubhamJain2798/ShubhamJain2798.github.io/classwork-shubham/vega-viz.json"
+        vegaEmbed('#myviz', vega_json);
+    </script>
+</html>

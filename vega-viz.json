@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "An interactive bar plot of Positive affect of all the countries in the World Happiness Dataset.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ShubhamJain2798/GIT_practice/master/DataPanelWHR2021C2-new.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"year": "number", "Positive affect": "number"}
+    }
+  },
+  "width": 1000,
+  "height": 500,
+  "encoding": {
+    "x": {"field": "Country name", "type": "nominal"},
+    "y": {"field": "Positive affect", "type": "quantitative"},
+    "color": {"field": "Country name", "title": "Country name"},
+    "fillOpacity": {"condition": {"param": "select", "value": 1}, "value": 0.1},
+    "strokeWidth": {
+      "condition": [
+        {"param": "select", "empty": false, "value": 2},
+        {"param": "highlight", "empty": false, "value": 1}
+      ],
+      "value": 0
+    }
+  },
+  "mark": {
+    "type": "bar",
+    "opacity": 0.9,
+    "tooltip": true,
+    "stroke": "black",
+    "cursor": "pointer"
+  },
+  "params": [
+    {
+      "name": "year",
+      "value": [{"year": 2008}],
+      "select": {"type": "point", "fields": ["year"]},
+      "bind": {
+        "name": "Year",
+        "input": "range",
+        "min": 2008,
+        "max": 2020,
+        "step": 1
+      }
+    },
+    {"name": "highlight", "select": {"type": "point", "on": "mouseover"}},
+    {"name": "select", "select": "point"}
+  ],
+  "transform": [{"filter": {"param": "year"}}],
+  "config": {}
+}
